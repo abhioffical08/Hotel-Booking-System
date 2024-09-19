@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            height: 100vh;
+            background-color: aqua;
+            color: aliceblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .counterContainer {
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        span {
+            font-size: 9.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="counterContainer">
+        <h2>Project Completed</h2>
+        <span class="counter">0</span>
+    </div>
+
+    <script>
+        const counterEl = document.querySelector('.counter');
+        let counterNumber = 0;
+
+        const updateCounter = setInterval(function () {
+            counterNumber++;
+            counterEl.textContent = counterNumber;
+
+            if (counterNumber >= 899) {
+                clearInterval(updateCounter);
+                counterEl.style.color = '#01ad71';
+            }
+        }, 1);
+    </script>
+
+</body>
+</html>
